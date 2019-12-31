@@ -2,7 +2,7 @@
 
 {{ component( "Ceres::Customer.Components.UserLoginHandler" ) }}
 {{ component( "Ceres::PageDesign.Components.ShippingCountrySelect" ) }}
-{{ component( "Ceres::PageDesign.Components.MobileNavigation" ) }}
+{{ component( "CeresCoconut::PageDesign.Components.MobileNavigation" ) }}
 {{ component( "Ceres::ItemList.Components.ItemSearch" ) }}
 {{ component( "Ceres::WishList.Components.WishListCount" ) }}
 {{ component( "Ceres::Basket.Components.BasketPreviewHover" ) }}
@@ -16,7 +16,7 @@
 
 {% set headerContainer = LayoutContainer.show("Ceres::Header") | trim %}
 {% if headerContainer is empty %}
-    {% include "Ceres::PageDesign.Partials.Header.DefaultHeader" %}
+    {% include "CeresCoconut::PageDesign.Partials.Header.DefaultHeader" %}
 {% else %}
 <header id="page-header" class="fixed-top">
     <div class="container-max">
