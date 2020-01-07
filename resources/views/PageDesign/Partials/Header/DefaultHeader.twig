@@ -5,7 +5,30 @@
         <div class="container-max">
             <div class="row mx-0">
                 {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
+                <div class="top-bar-items search-shown">
+				<div class="always-visible-search">
 
+		            {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
+		            {% if overrideSearchBar | trim is empty %}
+		                {# <item-search template="#vue-item-search"></item-search> #}
+		                <item-search template="#vue-item-search"
+                                         :show-item-images="{{ showItemImages | json_encode }}"
+                                         :forward-to-single-item="{{ forwardToSingleItem | json_encode }}">
+                                <div class="search-box-inner">
+                                    <div class="search-box-shadow-frame">
+                                        <input type="search" class="search-input"/>
+                                        <button class="search-submit" type="submit">
+                                            <i class="fa fa-search sm-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </item-search>
+		            {% else %}
+		                {{ overrideSearchBar | raw }}
+		            {% endif %}
+
+				</div>
+				<div class="controls">
                 <ul id="controlsList" class="controls-list list-inline">
                     <li class="list-inline-item control-user">
                         <user-login-handler>
@@ -40,7 +63,7 @@
                             </a>
                         </li>
                     {% endif %}
-                    <li class="list-inline-item control-search">
+                  {#  <li class="list-inline-item control-search">
                         <a class="anicon anicon-search-xcross"
                            aria-label="toggle search"
                            data-toggle="collapse"
@@ -50,7 +73,7 @@
                            data-parent="#controlsList">
                             <span class="anicon-search-item" aria-hidden="true"></span>
                         </a>
-                    </li>
+                    </li> #}
                     {% if services.url.isRouteEnabled("wish-list") %}
                         <li class="list-inline-item control-wish-list">
                             <wish-list-count>
@@ -79,6 +102,7 @@
                         {% endif %}
                     </li>
                 </ul>
+              </div>
             </div>
         </div>
         {% include "CeresCoconut::PageDesign.Partials.Header.Navigation" %}
@@ -92,14 +116,14 @@
 
 <div class="container-max page-header">
     <div class="row mx-0">
-        <div id="searchBox" class="cmp cmp-search-box collapse">
+      {#  <div id="searchBox" class="cmp cmp-search-box collapse">
             {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
             {% if overrideSearchBar | trim is empty %}
                 <item-search template="#vue-item-search"></item-search>
             {% else %}
                 {{ overrideSearchBar | raw }}
             {% endif %}
-        </div>
+        </div> #}
 
         {% if enableCurrencySelect == "true" %}
             <div id="currencySelect" class="cmp cmp-currency-select collapse">
