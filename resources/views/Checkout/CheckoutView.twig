@@ -121,7 +121,7 @@
                                     {{ overrideAddressLists }}
                                 {% endif %}
                                 {% set overrideShippingProfiles = LayoutContainer.show("Ceres::Checkout.ShippingProfileList") %}
-                                <header class="mb-3">
+                                <header class="mb-3 hidden">
                                     <h3>{{ trans("Ceres::Template.checkoutShippingProfile") }}</h3>
                                 </header>
 
@@ -158,15 +158,15 @@
                                 {% endif %}
                                 {{ LayoutContainer.show("Ceres::Checkout.AfterPaymentList") }}
 
-                                <header>
+                            {#    <header>
                                     <h3>{{ trans("Ceres::Template.checkoutContactWish") }}</h3>
                                 </header>
 
-                                <contact-wish-input class="pb-3"></contact-wish-input>
+                                <contact-wish-input class="pb-3"></contact-wish-input> #}
 
                                 <shipping-privacy-hint-check></shipping-privacy-hint-check>
 
-                                <accept-gtc-check></accept-gtc-check>
+                              {#  <accept-gtc-check></accept-gtc-check> #}
                                 {{ LayoutContainer.show("Ceres::Checkout.OptIns") }}
                             </div>
                         </div>
