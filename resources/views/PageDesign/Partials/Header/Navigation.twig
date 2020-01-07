@@ -3,18 +3,18 @@
 {% set companyName  = trans("Ceres::Template.headerCompanyName") %}
 {% set useMegaMenu  = config("Ceres.header.megamenu_levels") > 1 %}
 
-<nav class="navbar header-fw{% if useMegaMenu %} megamenu{%endif%}">
+<nav class="navbar{% if useMegaMenu %} megamenu{%endif%} megamenu">
     <div class="container-max">
         <div class="row mx-0">
             <div class="brand-wrapper" {% if showHeaderNavBar == "side" %}style="position: relative"{% endif %}>
-                <a class="navbar-brand" href="{{ homepageURL }}">
+                <a class="navbar-brand float-lg-left" href="{{ homepageURL }}">
                     {% if ('http' in companyLogo) or ('layout/' in companyLogo) %}
                         <img alt="{{ companyName }}" src="{{ companyLogo }}" class="img-fluid" />
                     {% else %}
                         <img alt="{{ companyName }}" src="{{ plugin_path('Ceres') }}/{{ companyLogo }}" class="img-fluid" />
                     {% endif %}
                 </a>
-
+                <span class="d-none d-lg-inline-block">Der Wallerschop <span>- Von Walleranglern für Wallerangler</span></span>
                 <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler d-lg-none" type="button">
                     &#9776;
                 </button>
