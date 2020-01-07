@@ -74,6 +74,7 @@
                                     </div>
                                 </template>
                                 </div>
+                                  <div class="item-small-prices text-muted">
                             <div v-if="basketItem.variation.data.properties">
                                 <ul class="bulletpoints mt-1 pl-3">
                                 <li class="articlenumber small text-muted" v-for="(property, index) in basketItem.variation.data.properties" v-if="property.group.id == 2">
@@ -81,6 +82,7 @@
                                 </li>
                             	</ul>
                             </div>
+                          </div>
                         </div>
                     </div>
 
