@@ -84,15 +84,17 @@
     <span>
         ${ currentVariation.variation.availability.names.name }
     </span>
-    <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="Informationen zur Berechnung des Liefertermins hier">Informationen zur Berechnung des Liefertermins hier</a>
 </span>
+<p class="small mt-2 mb-4 pl-1">
+  <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="Informationen zur Berechnung des Liefertermins hier">Informationen zur Berechnung des Liefertermins hier</a>
+</p>
 
 <div class="my-3">
     <div class="w-100">
         <slot name="before-add-to-basket"></slot>
     </div>
 
-    <div class="col-12 col-sm-7 col-md-12 col-lg-8 my-3">
+    <div class="col-12 col-sm-7 col-md-12 col-lg-8 my-3 pl-0">
         {{ AddToBasket.printVueComponent(
             "currentVariation",
             false,
