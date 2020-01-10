@@ -57,17 +57,5 @@
         {% set initialCategory = null %}
     {% endif %}
 
-  <mobile-navigation :initial-category="{{ initialCategory | json_encode }}" :include-language="{{ urls.includeLanguage | json_encode }}">
-    <ul class="mainmenu">
-      <li class="ddown">
-      <a href="#">Ruten, Rollen Schnur</a>
-      <ul>
-      <li><a href="wallerruten">Wallerruten</a></li>
-      </ul>
-      </li>
-      <li>
-      <a href="#">Haken Montage Köder</a>
-      </li>
-    </ul>
-  </mobile-navigation>
+  <mobile-navigation :initial-category="{{ initialCategory | json_encode }}" :include-language="{{ urls.includeLanguage | json_encode }}"></mobile-navigation>
 </div>
